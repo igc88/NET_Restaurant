@@ -1,0 +1,7 @@
+C:\Users\Iago\source\repos\igc88\NET_Restaurant\bin\Debug\NET_Restaurant.exe.config
+C:\Users\Iago\source\repos\igc88\NET_Restaurant\bin\Debug\NET_Restaurant.exe
+C:\Users\Iago\source\repos\igc88\NET_Restaurant\bin\Debug\NET_Restaurant.pdb
+C:\Users\Iago\source\repos\igc88\NET_Restaurant\obj\Debug\NET_Restaurant.csprojAssemblyReference.cache
+C:\Users\Iago\source\repos\igc88\NET_Restaurant\obj\Debug\NET_Restaurant.csproj.CoreCompileInputs.cache
+C:\Users\Iago\source\repos\igc88\NET_Restaurant\obj\Debug\NET_Restaurant.exe
+C:\Users\Iago\source\repos\igc88\NET_Restaurant\obj\Debug\NET_Restaurant.pdb
