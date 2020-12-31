@@ -20,7 +20,7 @@ namespace NET_Restaurant {
 
         public void init() {
             int billete5, billete10, billete20, billete50, billete100, billete200, billete500;
-            
+
             double precioTotal = 0;
 
             string[] menu = new string[platos.Count];
@@ -44,11 +44,29 @@ namespace NET_Restaurant {
 
             while (continueOrder) {
                 Console.WriteLine("¿Qué desea?");
-                userOrder.Add(Console.ReadLine());
+                string newPlato = Console.ReadLine();
 
-                Console.WriteLine("¿Algo más? (1: Si - 0: No)");
-                if (int.Parse(Console.ReadLine()) == 0) {
-                    continueOrder = false;
+                try {                    
+                    int precio = platos[newPlato];
+                    precioTotal += precio;
+                    userOrder.Add(newPlato);
+                } catch (KeyNotFoundException ex) {
+                    Console.WriteLine(ex.Message);
+                }                
+
+                bool correctOption = false;
+
+                while (!correctOption) {
+                    Console.WriteLine("¿Algo más? (1: Si - 0: No)");
+                    int opcion = int.Parse(Console.ReadLine());
+                    if (opcion == 0) {
+                        continueOrder = false;
+                        correctOption = true;
+                    } else if (opcion != 1) {
+                        throw new Exception("Debe introducir una opción correcta");
+                    } else {
+                        correctOption = true;
+                    }
                 }
             }
 
@@ -56,10 +74,10 @@ namespace NET_Restaurant {
             Console.WriteLine("Revisión del pedido:");
             whitespace();
 
-            for (int i=0; i<userOrder.Count; i++) {
+            for (int i = 0; i < userOrder.Count; i++) {
                 if (platos.Keys.Contains(userOrder.ElementAt(i))) {
                     Console.WriteLine("{0} - {1}", userOrder.ElementAt(i), platos[userOrder.ElementAt(i)]);
-                    precioTotal += platos[userOrder.ElementAt(i)];
+                    
                 } else {
                     Console.WriteLine("{0} - {1}", userOrder.ElementAt(i), "El plato especificado no existe");
                 }
@@ -74,7 +92,7 @@ namespace NET_Restaurant {
         }
     };
 
-    
+
 
 }
 
